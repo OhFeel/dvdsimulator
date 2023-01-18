@@ -221,13 +221,13 @@
 //     };
 //   };
   let speed = 20;
-  let scale = 0.17;
+  let scale = 0.5;
   let ctx;
   let logoColor;
 
   let dvd = {
-    x: Math.floor(Math.random() * window.innerWidth + 75),
-    y: Math.floor(Math.random() * window.innerHeight + 75),
+    x: Math.floor(Math.random() * window.innerWidth),
+    y: Math.floor(Math.random() * window.innerHeight),
     xspeed: 10,
     yspeed: 10,
     img: new Image(),
@@ -246,7 +246,19 @@
   
 
   function update() {
+    
     setTimeout(() => {
+      
+      dvd.x += dvd.xspeed;
+  dvd.y += dvd.yspeed;
+
+  if (dvd.x + dvd.img.width > window.innerWidth || dvd.x < 0) {
+    dvd.xspeed = -dvd.xspeed;
+  }
+
+  if (dvd.y + dvd.img.height > window.innerHeight || dvd.y < 0) {
+    dvd.yspeed = -dvd.yspeed;
+  }
       ctx.fillStyle = "#16161d";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = logoColor;
@@ -260,7 +272,7 @@
       );
       dvd.x += dvd.xspeed;
       dvd.y += dvd.yspeed;
-      checkHitBox();
+      checkHitBox();  
       update();
     }, speed);
   }
