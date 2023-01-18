@@ -224,13 +224,13 @@
   let scale = 0.5;
   let ctx;
   let logoColor;
-
+ let image =  new Image(),
   let dvd = {
-    x: Math.floor(Math.random() * window.innerWidth),
-    y: Math.floor(Math.random() * window.innerHeight),
+    x: Math.floor(Math.random() * window.innerWidth - image.width),
+    y: Math.floor(Math.random() * window.innerHeight - image.height),
     xspeed: 10,
     yspeed: 10,
-    img: new Image(),
+   img: image
   };
 
   function startAnimation() {
@@ -249,16 +249,7 @@
     
     setTimeout(() => {
       
-      dvd.x += dvd.xspeed;
-  dvd.y += dvd.yspeed;
-
-  if (dvd.x + dvd.img.width > window.innerWidth || dvd.x < 0) {
-    dvd.xspeed = -dvd.xspeed;
-  }
-
-  if (dvd.y + dvd.img.height > window.innerHeight || dvd.y < 0) {
-    dvd.yspeed = -dvd.yspeed;
-  }
+ 
       ctx.fillStyle = "#16161d";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = logoColor;
