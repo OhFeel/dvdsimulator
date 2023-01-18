@@ -189,7 +189,7 @@
     let errorMsg = document.getElementById("error-msg");
     if (file.size > maxFileSize) {
       errorMsg.innerHTML =
-        "File size is too big. Please select an image smaller than 10000000MB.";
+        "File size is too big. Please select an image smaller than 10MB.";
       return;
     } else if (!file.type.match("image.*")) {
       errorMsg.innerHTML =
@@ -227,12 +227,18 @@
 
   let dvd = {
     img: new Image(),
-    x: Math.floor(Math.random() * window.innerWidth - dvd.img.width),
-    y: Math.floor(Math.random() * window.innerHeight - dvd.img.height),
+    x: 0,
+    y: 0,
     xspeed: 10,
     yspeed: 10,
    
+    init: function() {
+        this.img.src = img.src;
+        this.x = Math.floor(Math.random() * window.innerWidth - this.img.width);
+        this.y = Math.floor(Math.random() * window.innerHeight - this.img.height);
+    }
   };
+  dvd.init();
 
   function startAnimation() {
     document.getElementById("start-page").style.display = "none";
