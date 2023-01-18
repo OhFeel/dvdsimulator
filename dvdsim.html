@@ -298,8 +298,8 @@ function checkHitCount() {
   } else if (hitCount > 5) {
     clearTimeout(hitTimer);
     hitCount = 0;
-    dvd.x = Math.floor(Math.random() * window.innerWidth - dvd.img.width);
-    dvd.y = Math.floor(Math.random() * window.innerHeight - dvd.img.height);
+    dvd.x = Math.floor(Math.random() * window.innerWidth );
+    dvd.y = Math.floor(Math.random() * window.innerHeight );
   }
 }
 
