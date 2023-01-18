@@ -224,13 +224,14 @@
   let scale = 0.5;
   let ctx;
   let logoColor;
- let image =  new Image(),
+
   let dvd = {
-    x: Math.floor(Math.random() * window.innerWidth - image.width),
-    y: Math.floor(Math.random() * window.innerHeight - image.height),
+    img: new Image(),
+    x: Math.floor(Math.random() * window.innerWidth - img.width),
+    y: Math.floor(Math.random() * window.innerHeight - img.height),
     xspeed: 10,
     yspeed: 10,
-   img: image
+   
   };
 
   function startAnimation() {
