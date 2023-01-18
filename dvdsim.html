@@ -179,7 +179,7 @@
    
 
 
-  let maxFileSize = 500000; // 500KB
+  let maxFileSize = 10000000; // 10MB
   window.onload = function () {
     canvas = document.getElementById("tv-screen");
   };
@@ -189,7 +189,7 @@
     let errorMsg = document.getElementById("error-msg");
     if (file.size > maxFileSize) {
       errorMsg.innerHTML =
-        "File size is too big. Please select an image smaller than 500KB.";
+        "File size is too big. Please select an image smaller than 10000000MB.";
       return;
     } else if (!file.type.match("image.*")) {
       errorMsg.innerHTML =
