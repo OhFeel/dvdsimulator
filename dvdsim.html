@@ -265,7 +265,9 @@ function startAnimation() {
 }
 
 function update() {
-
+if(!dvd.img) {
+	dvd.img.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/DVD-Video_Logo.svg/1200px-DVD-Video_Logo.svg.png"
+}
   setTimeout(() => {
 
     ctx.fillStyle = "#16161d";
